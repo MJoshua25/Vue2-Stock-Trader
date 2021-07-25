@@ -1,4 +1,4 @@
-import stocks from "../../data/stocks";
+import stocks from '../../data/stocks';
 
 const state = {
     stocks: []
@@ -10,8 +10,8 @@ const mutations = {
     },
     'RND_STOCKS' (state) {
         state.stocks.forEach(stock => {
-            stock.price = Math.round(stock.price * (0.5 + Math.random()));
-        })
+            stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
+        });
     }
 };
 
@@ -35,7 +35,7 @@ const getters = {
 
 export default {
     state,
-    actions,
     mutations,
-    getters,
-}
+    actions,
+    getters
+};
